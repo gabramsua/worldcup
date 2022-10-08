@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
+import './styles/Home.scss';
 
 export interface HomeInterface {}
 const Item = styled(Paper)(({ theme }) => ({
@@ -17,8 +18,8 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const Home : React.FC<HomeInterface> = () => {
 	return (
-		<Box sx={{ flexGrow: 1 }}>
-			<Grid container spacing={2}>
+		<Box sx={{ flexGrow: 1 }} className="home">
+			<Grid container className="grid-container" spacing={2}>
 				<Grid xs={6}>
 					<Item>
 						<Scoreboard />	
