@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/Match.scss';
 import { Match as Game} from "@/models/models";
+import { GameModal } from '@/components/GameModal';
 
 export interface MatchInterface {}
 
 const Match = ({ game }: { game: Game }) => {
+	const [openPopup, setOpenPopup] = useState(false);
+	const handleClick = () => {
+		setOpenPopup(true);
+	}
+
 	return (
 	<div className='match'>
 		<div className="match-teams">
@@ -16,7 +22,10 @@ const Match = ({ game }: { game: Game }) => {
 			<span>{game.awayTeam}</span><img className='match-flag' src={game.awayFlag} />
 			</div>
 		</div>
-		<button>Start Game</button>
+		<button onClick={() => setOpenPopup(true)}>Start Game</button>
+
+
+		<GameModal openPopup={openPopup} setOpenPopup={setOpenPopup}></GameModal>
 	</div >);
 };
 
