@@ -5,6 +5,5 @@ export interface Match {
     homeFlag: string,
     awayFlag: string,
     initialScoreHome: number,
-    initialScoreAway: number,
-    isFinished: boolean
+    initialScoreAway: number
 }
