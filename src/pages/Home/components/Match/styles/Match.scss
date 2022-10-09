@@ -22,3 +22,14 @@
         width: 50px;
     }
 }
+
+.container-modal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-endgame {
+    width: 100%;
+}

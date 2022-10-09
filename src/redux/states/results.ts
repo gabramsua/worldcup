@@ -1,15 +1,16 @@
-import { Match } from "@/models/models";
+import { FinalizedMatch } from "@/models/models";
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState: Match[] = [];
+const initialState: FinalizedMatch[] = [];
 
 export const resultsSlice = createSlice({
     name: 'results',
     initialState: initialState,
     reducers: {
-        addResult: (state, action) => {
-            return action.payload;
-        }
+        addResult: (state, action) => 
+        // { return action.payload;}
+        // ({...state, ...action.payload})
+        {state.push(action.payload)}
     }
 })
 export const { addResult } = resultsSlice.actions;
