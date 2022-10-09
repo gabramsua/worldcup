@@ -7,10 +7,9 @@ export const resultsSlice = createSlice({
     name: 'results',
     initialState: initialState,
     reducers: {
-        addResult: (state, action) => 
-        // { return action.payload;}
-        // ({...state, ...action.payload})
-        {state.push(action.payload)}
+        addResult: (state, action) => {
+            state.push(action.payload)
+        }
     }
 })
 export const { addResult } = resultsSlice.actions;
