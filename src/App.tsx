@@ -1,15 +1,15 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { Provider } from 'react-redux'
 import './App.css'
 import { Home } from './pages'
+import store from './redux/store'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
+    <Provider store={store}>
       <Home />
-    </div>
+    </Provider>
   )
 }
 
