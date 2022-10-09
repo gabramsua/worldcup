@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { finishGame } from '@/redux/states';
+import { addResult, finishGame } from '@/redux/states';
 import './styles/Match.scss';
 import { Match as Game} from "@/models/models";
 import { GameModal } from '@/components/GameModal';
@@ -16,7 +16,14 @@ const Match = ({ game }: { game: Game }) => {
 
 	const handleClose = () => {
 		dispatch(finishGame(game))
-
+		const result = {
+			match: game,
+			homeScore: homeScore,
+			awayScore: awayScore,
+			goals: homeScore + awayScore,
+			datetime: Date.now()
+		}
+		dispatch(addResult(result))
 		setOpenPopup(false)
 	}
 
