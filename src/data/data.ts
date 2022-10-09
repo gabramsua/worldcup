@@ -8,7 +8,7 @@ export const data = [
     },
     {
         id: 2,
-        homeTeam: 'Englad',
+        homeTeam: 'England',
         awayTeam: 'Iran',
         homeFlag: 'https://www.flashscore.es/res/image/data/tCG9KQYA-84VqVvfA.png',
         awayFlag: 'https://www.flashscore.es/res/image/data/E71I3ig5-MBBBg4U5.png'
