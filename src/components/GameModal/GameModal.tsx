@@ -8,8 +8,8 @@ const GameModal = (props: any) => {
 	const { title, children, openPopup, setOpenPopup } = props;
 	return (
 		<Dialog open={openPopup}>
-			<DialogTitle>Title</DialogTitle>
-			<DialogContent>Content</DialogContent>
+			<DialogTitle>{title}</DialogTitle>
+			<DialogContent dividers>{children}</DialogContent>
 		</Dialog>
 	);
 };

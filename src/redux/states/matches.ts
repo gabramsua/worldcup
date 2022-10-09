@@ -1,19 +1,25 @@
-import { LocalStorageTypes } from "@/constants";
 import { Match } from "@/models/models";
-import { getLocalStorage, setLocalStorage } from "@/utils/localStorage.utility";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState: Match[] = [];
 
 export const matchesSlice = createSlice({
     name: 'matches',
-    initialState: getLocalStorage(LocalStorageTypes.MATCHES) ? JSON.parse(localStorage.getItem(LocalStorageTypes.MATCHES) as string) : initialState,
+    initialState: initialState,
     reducers: {
         addMatch: (state, action) => {
-            setLocalStorage(LocalStorageTypes.MATCHES, state)
             return action.payload;
-        }
+        },
+        startGame: (state, action) => ({ ...state, ...action.payload }),
+        updateScore: (state, action) => ({ ...state, ...action.payload }),
+        finishGame: (state, action) => { 
+            const res = state.find((elem:Match) => elem.id == action.payload.id)
+            if(!!res) {
+                state.splice(state.indexOf(res), 1)
+            }
+
+        },
     }
 })
 
-export const { addMatch } = matchesSlice.actions;
+export const { addMatch, startGame, updateScore, finishGame } = matchesSlice.actions;
