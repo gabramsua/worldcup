@@ -7,9 +7,6 @@ export interface MatchInterface {}
 
 const Match = ({ game }: { game: Game }) => {
 	const [openPopup, setOpenPopup] = useState(false);
-	const handleClick = () => {
-		setOpenPopup(true);
-	}
 
 	return (
 	<div className='match'>
