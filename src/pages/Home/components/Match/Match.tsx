@@ -4,6 +4,7 @@ import { finishGame } from '@/redux/states';
 import './styles/Match.scss';
 import { Match as Game} from "@/models/models";
 import { GameModal } from '@/components/GameModal';
+import Button from '@mui/material/Button';
 
 export interface MatchInterface {}
 
@@ -28,7 +29,7 @@ const Match = ({ game }: { game: Game }) => {
 			<span>{game.awayTeam}</span><img className='match-flag' src={game.awayFlag} />
 			</div>
 		</div>
-		<button onClick={() => setOpenPopup(true)}>Start Game</button>
+		<Button variant="outlined" onClick={() => setOpenPopup(true)}>Start Game</Button>
 
 
 
