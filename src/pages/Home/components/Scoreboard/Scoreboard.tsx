@@ -1,14 +1,17 @@
+import { AppStore } from '@/redux/store';
 import React from 'react';
-import { data } from '@/data/data';
 import { Match } from '../Match';
+import { useSelector } from 'react-redux';
 
 export interface ScoreboardInterface {}
 
 const Scoreboard : React.FC<ScoreboardInterface> = () => {
+	const stateMatches = useSelector((store: AppStore) => store.matches);
+	
 	return <>
 		<h1>Scoreboard</h1>
-		{data.map((match => (
-			<Match />
+		{stateMatches.map((match => (
+			<Match key={match.id} game={match} />
 		))) }
 		</>;
 };
