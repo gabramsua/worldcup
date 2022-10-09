@@ -7,7 +7,7 @@ export interface GameModalInterface {}
 const GameModal = (props: any) => {
 	const { title, children, openPopup, setOpenPopup } = props;
 	return (
-		<Dialog open={openPopup}>
+		<Dialog open={openPopup} fullWidth={true} maxWidth={'sm'}>
 			<DialogTitle>{title}</DialogTitle>
 			<DialogContent dividers>{children}</DialogContent>
 		</Dialog>
