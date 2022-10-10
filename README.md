@@ -27,3 +27,5 @@ We are currently sorting the results by number of goals. As it is an array we re
 
 It was decided to use redux instead of context (even though it is less quick in terms of development) because as said, this solution is too small but makes more sense as these 
 two components will probably not be siblings. 
+
+That was quick but fun! 
