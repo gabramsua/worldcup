@@ -1,0 +1,35 @@
+@import '@/variables.scss';
+
+.match {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;    
+    border: 1px solid $border-color;
+    padding: 10px;
+
+    &-teams {
+        display: inherit;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-team {
+        display: flex;
+        align-items: center;
+    }
+
+    &-flag {
+        width: 50px;
+    }
+}
+
+.container-modal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-endgame {
+    width: 100%;
+}
